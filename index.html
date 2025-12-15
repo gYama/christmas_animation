@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pure CSS Christmas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'night-sky-top': '#0f172a',
+              'night-sky-bottom': '#1e293b',
+              'tree-deep': '#0f392b',
+              'tree-light': '#2d6a4f',
+              'gold-dark': '#b7950b',
+              'gold-light': '#f1c40f',
+              'santa-red-dark': '#922b21',
+              'santa-red-light': '#c0392b',
+              'skin-shadow': '#e0ac69',
+              'skin-light': '#fad7a0',
+            },
+            boxShadow: {
+              'glow-gold': '0 0 15px 2px rgba(241, 196, 15, 0.6)',
+              'glow-red': '0 0 15px 2px rgba(231, 76, 60, 0.6)',
+              'inner-deep': 'inset 0 0 20px rgba(0,0,0,0.5)',
+            },
+            backgroundImage: {
+              'snow-gradient': 'linear-gradient(to bottom, #f1f5f9 0%, #cbd5e1 100%)',
+              'tree-gradient': 'linear-gradient(135deg, #2d6a4f 0%, #1b4332 100%)',
+            },
+            animation: {
+              'twinkle': 'twinkle 3s ease-in-out infinite',
+              'float': 'float 4s ease-in-out infinite',
+              'float-delayed': 'float 4s ease-in-out 2s infinite',
+              'snow': 'snow 10s linear infinite',
+              'breathe': 'breathe 4s ease-in-out infinite',
+              'sway': 'sway 3s ease-in-out infinite',
+              'happy-dance': 'happy-dance 1.5s ease-in-out infinite',
+              'happy-dance-delayed': 'happy-dance 1.5s ease-in-out 0.75s infinite',
+              'fairy-fly': 'fairy-fly 15s linear infinite',
+              'golden-spiral': 'golden-spiral 15s linear infinite',
+            },
+            keyframes: {
+              twinkle: {
+                '0%, 100%': { opacity: '0.8', transform: 'scale(1)' },
+                '50%': { opacity: '1', transform: 'scale(1.2)' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-5px)' },
+              },
+              snow: {
+                '0%': { transform: 'translateY(-10vh) translateX(0)' },
+                '100%': { transform: 'translateY(110vh) translateX(20px)' },
+              },
+              breathe: {
+                '0%, 100%': { transform: 'scale(1)' },
+                '50%': { transform: 'scale(1.02)' },
+              },
+              sway: {
+                '0%, 100%': { transform: 'rotate(-2deg)' },
+                '50%': { transform: 'rotate(2deg)' },
+              },
+              'happy-dance': {
+                '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                '25%': { transform: 'translateY(-15px) rotate(-3deg)' },
+                '50%': { transform: 'translateY(0) rotate(0deg)' },
+                '75%': { transform: 'translateY(-8px) rotate(3deg)' },
+              },
+              'fairy-fly': {
+                '0%': { transform: 'translateX(-20vw) translateY(40vh) scale(0.5)', opacity: '0' },
+                '10%': { opacity: '1' },
+                '90%': { opacity: '1' },
+                '100%': { transform: 'translateX(120vw) translateY(-20vh) scale(1)', opacity: '0' },
+              },
+              'golden-spiral': {
+                '0%': { transform: 'translateX(-400px) translateY(100px) scale(0.5)', opacity: '0' },
+                '3%': { opacity: '1' },
+                '7.5%': { transform: 'translateX(-200px) translateY(-50px) scale(0.8)', zIndex: '50' },
+                '15%': { transform: 'translateX(0px) translateY(20px) scale(1.2)', zIndex: '50' }, /* Center front */
+                '22.5%': { transform: 'translateX(200px) translateY(-50px) scale(0.8)', zIndex: '50' },
+                '27%': { opacity: '1' },
+                '30%': { transform: 'translateX(400px) translateY(100px) scale(0.5)', opacity: '0' },
+                '100%': { transform: 'translateX(400px) translateY(100px) scale(0.5)', opacity: '0' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #0f172a;
+      }
+      /* Custom utility for complex shapes */
+      .clip-triangle {
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
